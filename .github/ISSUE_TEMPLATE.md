@@ -1,17 +1,20 @@
-**Umgebung:** Samsung Galaxy S4, 4.4.4
+**Umgebung:** 
 
-**Zeitpunkt:** 8. Juni, 20h15
+**Zeitpunkt:** 
 
-**Version:** 7(1.0)
+**Version:** 
 
 ### Expected behaviour
-- App läuft weiter
+- 
+-
 
 ### Actual behaviour
-- App stürzt ab
+- 
+-
 
 ### Steps to reproduce
-- Settings ->Datenaktualisierung
-- Zurück zur Übersicht
-- App in den Hintergrund dann Vordergrund
+- 
+- 
+- 
+
 
