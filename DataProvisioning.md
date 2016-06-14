@@ -61,13 +61,7 @@ The Web Service with its programmed/programmable logic will provide the followin
  Navicat MySQL Data Transfer
 
  Source Server         : pARTicip-app.ch Typo3
- Source Server Type    : MySQL
- Source Server Version : 50544
- Source Host           : gutenberg.metanet.ch
- Source Database       : papp_typo3
-
  Target Server Type    : MySQL
- Target Server Version : 50544
  File Encoding         : utf-8
 
  Date: 06/13/2016 15:54:57 PM
