@@ -54,6 +54,26 @@ The Web Service with its programmed/programmable logic will provide the followin
  - the entity *is not transported* by the Web service
  - `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
 
+# 3. Data Update Process
+
+# 3.1 Version Information
+
+General version information about the last update state is available using the [Version](http://particip-app.ch/service/apiv1/version) service; both UNIX timestamps (seconds) and formatted date information is on display.
+
+# 3.2 `since` Delta Retrieval Option
+
+Using the `since` parameter in Web Service calls, it is possible to just retrieve datasets with modification/creation date since a given timestamp.
+
+Example: http://particip-app.ch/service/apiv1/artwork/since/1465903237 returns the `artwork` entities changed since 1465903237.
+
+Attention: the `since` feature is not available for many-to-many entities `artwork_artist_mm`  `artwork_material_mm` as no per-dataset modification data is available!!
+
+# 3.3 Update Dependencies: Forced Full Update of Dependent Entities
+
+Attention: adding images to an `artwork` or adding artists or materials to an `artwork` does NOT update the `artwork_artist_mm`, `artwork_material_mm`, or `image` tables.
+
+It is hence necessary to proceed to a FULL UPDATE of these tables, whenever an app discovers that its local `artwork` table is behind the state present on the server!
+
 # Appendix A: MySQL Database Schema
 
 ```
@@ -371,7 +391,7 @@ CREATE TABLE `tx_participlabels_domain_model_string` (
 	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_material_mm
 	- DOES NOT appear in http://particip-app.ch/service/apiv1/image
 
-  
+
 - HIDDEN: Artwork UID 49899: Flug
 	- DOES NOT appearin http://particip-app.ch/service/apiv1/artwork
 	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_artist_mm
