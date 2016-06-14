@@ -1,22 +1,22 @@
 # Overview: pARTicip Data Provisioning between Server and Apps
 
-## Purpose of this Document
+# 1. Introduction
 
-## Overview of the Data Exchange
+## 1.1 Overview of the Data Exchange
 The pARTicip App („App“) has been developed during the pARTicipate project at the BFH, from 2014–2016. The BFH-TI institutes RISIS and ICTM actively participated in the overall activities of the project execution (defining features, choosing designs, carrying out tests, etc.), and are in particular responsible for building the App and the Backend Server („Server”) software.
 
-## Purpose of this Readme
+## 1.2 Purpose of this Document
 
 The purpose of this document is
 *	to document the data structures employed on data storage and transmission ways
 * to define the mapping between user interation on the Typo3 Backend and the data which are served to Apps
 
 
-# Data Structures
+# 2. Data Structures
 
 The data structures on the server are show in Appendix A: MySQL Database Schema.
 
-## Core Entities
+## 2.1 Core Entities
 
 All entities are documented with their attributes on http://particip-app.ch/service/apiv1
 
@@ -24,15 +24,15 @@ All entities are documented with their attributes on http://particip-app.ch/serv
 - Other independent, related entities are
   - [1:1] `collection` (MySQL table `tx_participdata_domain_model_collection`) decribing the collection (Kunst Freiburg, kiÖR Bern) and
   - [1:1] `kind` (MySQL table `tx_participdata_domain_model_kind`) decribing the type of artwork
-  - [0:n] `artist` (MySQL table `tx_participdata_domain_model_artist`) describing the relation to the
-  - [0:n] `material` (MySQL table `tx_participdata_domain_model_material`)
+  - [0:n] `artist` (MySQL table `tx_participdata_domain_model_artist`) as a list of the artists involved with an artwork
+  - [0:n] `material` (MySQL table `tx_participdata_domain_model_material`) as a list of materials related to the artwork
   - [0:n] `image`s; are to be loaded directly from server URL
 - Relationships between `artwork` to `artist`, `material`, and `image` entities are
 - [0:n] `artwork_artist_mm` (MySQL table `tx_participdata_artwork_artist_mm`) describing the relation to the
 - [0:n] `artwork_material_mm` (MySQL table `tx_participdata_artwork_material_mm`)
 - [0:n] `image` (no MySQL table counterpart, computed by Web Service)
 
-## `artwork` Entity Lifecycle: Editor View
+## 2.2 `artwork` Entity Lifecycle: Editor View
 
 Artwork entities are the central part of the collections managed on the Typo3 Backend. The following states can be enforced:
 
@@ -40,14 +40,19 @@ Artwork entities are the central part of the collections managed on the Typo3 Ba
 - `DELETED` the entity is (soft) deleted, i.e., its `deleted` attribute carries the value `1`; once an `artwork` is deleted by an editor on Typo3 by clicking on the `trash icon`, it disappears from her visibility (but is still in the MySQL DB)
 - `HIDDEN` the entity is hidden to the outside but visible to the Typo3 editor, its `hidden` attribute carries the value `1`; the object then displays the `white bulb icon`, as opposed to the `yellow bulb icon` (which is displayed in normal state)
 
-## `artwork` Entity Lifecycle: Web Service Behavior
+## 2.2 `artwork` Entity Lifecycle: Web Service Behavior
 
 The Web Service with its programmed/programmable logic will provide the following behavior:
 
 - `ACTIVE`
- - the entity `artwork` will be served containing the object; `artwork_artist_mm`, `artwork_material_mm`, and `image` will contain references to the object's `uid`
-- `DELETED` the entity will be served with a `deleted` attribute of value `1`; `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
-- `HIDDEN` the entity is not transported by the Web service; `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
+ - the entity `artwork` will be served containing the object
+ - `artwork_artist_mm`, `artwork_material_mm`, and `image` will contain references to the object's `uid`
+- `DELETED`
+ - the entity will be served with a `deleted` attribute of value `1`
+ - `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
+- `HIDDEN`
+ - the entity is not transported by the Web service
+ - `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
 
 # Appendix A: MySQL Database Schema
 
