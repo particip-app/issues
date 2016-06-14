@@ -363,3 +363,17 @@ CREATE TABLE `tx_participlabels_domain_model_string` (
 ) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
 
 ```
+# Appendix B: Reference Artworks
+
+- DELETED: Artwork UID 49715: Trojanisches Pferd
+	- APPEARS in http://particip-app.ch/service/apiv1/artwork
+	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_artist_mm
+	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_material_mm
+	- DOES NOT appear in http://particip-app.ch/service/apiv1/image
+
+  
+- HIDDEN: Artwork UID 49899: Flug
+	- DOES NOT appearin http://particip-app.ch/service/apiv1/artwork
+	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_artist_mm
+	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_material_mm
+	- DOES NOT appear in http://particip-app.ch/service/apiv1/image
