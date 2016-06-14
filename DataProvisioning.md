@@ -48,10 +48,10 @@ The Web Service with its programmed/programmable logic will provide the followin
  - the entity `artwork` will be served containing the object
  - `artwork_artist_mm`, `artwork_material_mm`, and `image` will contain references to the object's `uid`
 - `DELETED`
- - the entity will be served with a `deleted` attribute of value `1`
+ - the entity *will be served* with a `deleted` attribute of value `1`
  - `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
 - `HIDDEN`
- - the entity is not transported by the Web service
+ - the entity *is not transported* by the Web service
  - `artwork_artist_mm`, `artwork_material_mm`, and `image` WILL NOT contain references to the object's `uid`
 
 # Appendix A: MySQL Database Schema
