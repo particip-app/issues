@@ -411,14 +411,17 @@ Case/State  | Meaning                                                | S: `delet
 00          | Default state: object is deleted, but relations exist  | 1            | 0          | 1           | 1          | 0                | 1             | 
 01          | Object is set to 'in progress' on the backend          | 0            | 1          | 1           | 1          | 0                | 1             |
 02          | Object gets images (1T, 1S, 1I)                        | 0            | 1          | 1           | 3          | 0                | 1             |
-03          | Object gets more images (1T, 2S, 1I)                   | 0            | 1          | 1           | 4          | 0                | 1             | #66
-03          | Object gets more images (1T, 2S, 2I)                   | 0            | 1          | 1           | 5          | 0                | 1             | 
-03          | Object gets more images (1T, 3S, 3I), images=1,2,3     | 0            | 1          | 1           | 7          | 0                | 1             | 
-03          | Object gets 1 image less (1T, 2S, 2I), images=1,3      | 0            | 1          | 1           | 5          | 0                | 1             | 
-04          | Object gets visible                                    | 0            | 0          | 0           | 4          | 0                | 1             |
-05          | Object gets 1 material                                 | 0            | 0          | 0           | 4          | 1                | 1             |
-06          | Object gets a 2nd material                             | 0            | 0          | 0           | 4          | 2                | 1             |
-07          | Object gets a material less                            | 0            | 0          | 0           | 4          | 1                | 1             |
-08          | Object gets an artist more                             | 0            | 0          | 0           | 4          | 1                | 1             |
-09          | Object gets an artist less                             | 0            | 0          | 0           | 4          | 1                | 1             |
-09          | Object gets an update in the title field               | 0            | 0          | 0           | 4          | 1                | 1             |
+03          | Object gets more images (1T, 2S, 1I)                   | 0            | 1          | 1           | 4          | 0                | 1             | [66](66)
+04          | Object gets more images (1T, 2S, 2I)                   | 0            | 1          | 1           | 5          | 0                | 1             | 
+05          | Object gets more images (1T, 3S, 3I), images=1,2,3     | 0            | 1          | 1           | 7          | 0                | 1             | 
+06          | Object gets 1 image less (1T, 2S, 2I), images=1,3      | 0            | 1          | 1           | 5          | 0                | 1             | 
+07          | Object gets visible                                    | 0            | 0          | 0           | 4          | 0                | 1             |
+08          | Object gets 1 material                                 | 0            | 0          | 0           | 4          | 1                | 1             |
+09          | Object gets a 2nd material                             | 0            | 0          | 0           | 4          | 2                | 1             |
+10          | Object gets a material less                            | 0            | 0          | 0           | 4          | 1                | 1             |
+11          | Object gets an artist more                             | 0            | 0          | 0           | 4          | 1                | 1             |
+12          | Object gets an artist less                             | 0            | 0          | 0           | 4          | 1                | 1             |
+13          | Object gets an update in the title field               | 0            | 0          | 0           | 4          | 1                | 1             |
+14          | Object gets hidden                                     | 0            | 1          | 1           | 4          | 1                | 1             |
+15          | Object gets visible again                              | 0            | 0          | 0           | 4          | 1                | 1             |
+16          | Object gets deleted                                    | 1            | 0          | 1           | 4          | 1                | 1             |
