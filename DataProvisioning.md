@@ -406,7 +406,7 @@ CREATE TABLE `tx_participlabels_domain_model_string` (
 - Test Cases have to be executed in the sequence described below 
 - *C:* is client side, *S:* is server side
 
-Case/State  | Meaning                                                | S: `deleted` | S:`hidden` | C:`deleted` | C:`images` | C:`material_ref` | C:`artist_ref`| Issues
+Case        | Meaning                                                | S: <br>`deleted` | S: <br>`hidden` | C: <br>`deleted` | C: <br>`images` | C: <br>`material_ref` | C: <br>`artist_ref`| Issues
 ------------|--------------------------------------------------------|--------------|------------|-------------|------------|------------------|---------------|--------
 00          | Default state: object is deleted, but relations exist  | 1            | 0          | 1           | 1          | 0                | 1             | 
 01          | Object is set to 'in progress' on the backend          | 0            | 1          | 1           | 1          | 0                | 1             |
