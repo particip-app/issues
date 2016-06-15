@@ -49,7 +49,7 @@ The Web Service with its programmed/programmable logic will provide the followin
  - `artwork_artist_mm`, `artwork_material_mm`, and `image` will contain references to the object's `uid`
 - `DELETED` (= `DELETED` OR `HIDDEN` on Typo3 Backend)
  - the entity *will be served* with a `deleted` attribute of value `1`
- - `artwork_artist_mm`, `artwork_material_mm`, and `image` CAN contain references to the object's `uid`
+ - `artwork_artist_mm`, `artwork_material_mm`, and `image` MAY contain references to the object's `uid`
 
 # 3. Data Update Process
 
