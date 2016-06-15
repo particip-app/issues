@@ -397,3 +397,28 @@ CREATE TABLE `tx_participlabels_domain_model_string` (
 	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_artist_mm
 	- DOES NOT appear in http://particip-app.ch/service/apiv1/artwork_material_mm
 	- DOES NOT appear in http://particip-app.ch/service/apiv1/image
+
+# Appendix C: Reference Test Cases
+
+- Tests are carried out with Artwork UID 49715: Trojanisches Pferd
+- `hidden` attribute is server only, is not propagated to clients
+- Reset of situation is carried out AUTOMATICALLY EVERY 30 minutes !!
+- Test Cases have to be executed in the sequence described below 
+- *C:* is client side, *S:* is server side
+
+Case/State  | Meaning                                                | S: `deleted` | S:`hidden` | C:`deleted` | C:`images` | C:`material_ref` | C:`artist_ref`| Issues
+------------|--------------------------------------------------------|--------------|------------|-------------|------------|------------------|---------------|--------
+00          | Default state: object is deleted, but relations exist  | 1            | 0          | 1           | 1          | 0                | 1             | 
+01          | Object is set to 'in progress' on the backend          | 0            | 1          | 1           | 1          | 0                | 1             |
+02          | Object gets images (1T, 1S, 1I)                        | 0            | 1          | 1           | 3          | 0                | 1             |
+03          | Object gets more images (1T, 2S, 1I)                   | 0            | 1          | 1           | 4          | 0                | 1             | #66
+03          | Object gets more images (1T, 2S, 2I)                   | 0            | 1          | 1           | 5          | 0                | 1             | 
+03          | Object gets more images (1T, 3S, 3I), images=1,2,3     | 0            | 1          | 1           | 7          | 0                | 1             | 
+03          | Object gets 1 image less (1T, 2S, 2I), images=1,3      | 0            | 1          | 1           | 5          | 0                | 1             | 
+04          | Object gets visible                                    | 0            | 0          | 0           | 4          | 0                | 1             |
+05          | Object gets 1 material                                 | 0            | 0          | 0           | 4          | 1                | 1             |
+06          | Object gets a 2nd material                             | 0            | 0          | 0           | 4          | 2                | 1             |
+07          | Object gets a material less                            | 0            | 0          | 0           | 4          | 1                | 1             |
+08          | Object gets an artist more                             | 0            | 0          | 0           | 4          | 1                | 1             |
+09          | Object gets an artist less                             | 0            | 0          | 0           | 4          | 1                | 1             |
+09          | Object gets an update in the title field               | 0            | 0          | 0           | 4          | 1                | 1             |
