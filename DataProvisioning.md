@@ -411,7 +411,7 @@ Case/State  | Meaning                                                | S: `delet
 00          | Default state: object is deleted, but relations exist  | 1            | 0          | 1           | 1          | 0                | 1             | 
 01          | Object is set to 'in progress' on the backend          | 0            | 1          | 1           | 1          | 0                | 1             |
 02          | Object gets images (1T, 1S, 1I)                        | 0            | 1          | 1           | 3          | 0                | 1             |
-03          | Object gets more images (1T, 2S, 1I)                   | 0            | 1          | 1           | 4          | 0                | 1             | [66](66)
+03          | Object gets more images (1T, 2S, 1I)                   | 0            | 1          | 1           | 4          | 0                | 1             | [66](https://github.com/particip-app/issues/issues/66)
 04          | Object gets more images (1T, 2S, 2I)                   | 0            | 1          | 1           | 5          | 0                | 1             | 
 05          | Object gets more images (1T, 3S, 3I), images=1,2,3     | 0            | 1          | 1           | 7          | 0                | 1             | 
 06          | Object gets 1 image less (1T, 2S, 2I), images=1,3      | 0            | 1          | 1           | 5          | 0                | 1             | 
