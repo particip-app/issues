@@ -68,12 +68,6 @@ Example: http://particip-app.ch/service/apiv1/artwork/since/1465903237 returns t
 
 Attention: the `since` feature is not available for many-to-many entities `artwork_artist_mm`  `artwork_material_mm` as no per-dataset modification data is available!!
 
-# 3.3 Update Dependencies: Forced Full Update of Dependent Entities
-
-Attention: adding images to an `artwork` or adding artists or materials to an `artwork` does NOT update the `artwork_artist_mm`, `artwork_material_mm`, or `image` tables.
-
-It is hence necessary to proceed to a FULL UPDATE of these tables, whenever an app discovers that its local `artwork` table is behind the state present on the server!
-
 # Appendix A: MySQL Database Schema
 
 ```
