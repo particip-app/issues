@@ -1,7 +1,7 @@
 # Bildformate pARTicip App
 
 ## Katalog-Images
-Bitte von jedem Bild zum Werk in hochauflösender (aber "vernünftiger") Qualität (und Dateigrösse < 10MB) mit dem Namensschema
+Bitte von jedem (durch Laufnummer zu unterscheidendes) Bild zum Werk in hochauflösender (aber "vernünftiger") Qualität (und Dateigrösse < 10MB) mit dem Namensschema
 
 - `img-`<2-stellige Nummer der Sammlung>`-`<3-stellige Nummer (Original Key) des Werks>`-`<2-stellige Laufnummer>`.jpg`
 
@@ -9,7 +9,7 @@ Beispiel: `img-01-003-02.jpg`
 
 
 ## Squares
-Bitte von jedem Bild zum Werk einen quadratischen Ausschnitt 355x355 px, 710x710 px sowie 1065x1065 px anlegen, Namensschema
+Bitte von jedem (durch Laufnummer zu unterscheidendes) Bild zum Werk einen quadratischen Ausschnitt 355x355 px, 710x710 px sowie 1065x1065 px anlegen, Namensschema
 
 - `square-`<2-stellige Nummer der Sammlung>`-`<3-stellige Nummer (Original Key) des Werks>`-`<2-stellige Laufnummer>`.png` für 355x355 px
 
