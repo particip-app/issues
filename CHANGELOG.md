@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased](https://github.com/particip-app/issues/tree/HEAD)
+## [Released per 2016-07-10](https://github.com/particip-app/issues/tree/HEAD)
 
 **Implemented enhancements:**
 
